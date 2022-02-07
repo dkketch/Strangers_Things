@@ -1,0 +1,70 @@
+#app {
+    display: flex;
+    /* flex-direction: row; */
+}
+
+#form-main {
+    /* right: 15px;
+    top: 15px; */
+    order: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* #two-buttons {
+    /* display: flex; */
+
+
+/* justify-content: space-around; */
+
+#main-nav {
+    /* left: 15px;
+    top: 15px; */
+    display: flex;
+    flex-shrink: 3;
+    justify-content: flex-start;
+    justify-content: space-around;
+    order: -1;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+body {
+    font-family: 'Open Sans Condensed';
+    background: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+#id-pwd {
+    display: flex;
+    flex-direction: column;
+}
+
+#verify-pwd {
+    display: flex;
+    flex-direction: column;
+}
+
+#post-desc {
+    text-indent: 32px;
+    font-style: italic;
+}
+
+#post-auth {
+    text-indent: 32px;
+}
+
+#multi-pages {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+}
