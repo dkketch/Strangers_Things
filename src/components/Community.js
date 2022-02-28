@@ -11,7 +11,8 @@ const Community = (props) => {
             posts.map(post => <div key={post._id}>
                 <h3 id='post-title'>{post.title}</h3>
                 <p id='post-desc'>{post.description}</p>
-                <p id='post-auth'><b>Author:</b> {post.author.username}, <b>Price:</b> {post.price}</p>
+                <p id='post-auth'><b>Author:</b> {post.author.username},
+                 <b>Price:</b> {post.price}</p>
             </div>)
         }
     </div>

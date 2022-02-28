@@ -140,17 +140,18 @@ const LogIn = () => {
   return <>
   <div id="form-main">
     { showButtonForm ?
-        <div id="two-buttons">
-        <form>
-          <button type='logIn' onClick={logInButton}>Log In</button>
-          <button type='signUp' onClick={signUpButton}>Sign Up</button>
+        <form id="two-buttons">
+          <div class="form-header">
+                <h1>Stranger's Things</h1>
+          </div>
+          <button type='button' onClick={logInButton}>Log In</button>
+          <button type='button' onClick={signUpButton}>Sign Up</button>
         </form>
-        </div>
       : null}
 
       { showUsernameForm 
       ? <div id="log-in-form" >
-        <h3>{formHeading}</h3>
+        <h1 class="form-header">{formHeading}</h1>
             <form id="id-pwd" onSubmit={handleSubmit} >
               <label htmlFor='username'>Username:</label>
               <input type='text' name='username' value={username} onChange={handleChange} />
@@ -180,7 +181,7 @@ const LogIn = () => {
         { showSignOutButton ?
                 <div id="sign-out-button">
                 <form>
-                <button type='signOut' onClick={signOutButton}>Sign Out</button>
+                <button type='reset' onClick={signOutButton}>Sign Out</button>
                 </form>
                 </div>
             : null}

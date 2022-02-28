@@ -23,10 +23,10 @@ const Navigation = (props) => {
             </Route>
             <Route path="/profile">
                 <Profile />
-            </Route>
-            <Route exact path="/">
-                <Community />
             </Route> */}
+            <Route exact path="/">
+                <Community posts={posts}/>
+            </Route>
         </Switch>
         </div>
     
