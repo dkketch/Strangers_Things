@@ -1,47 +1,63 @@
-#app {
-    display: flex;
-    /* flex-direction: row; */
-}
-
-#form-main {
-    /* right: 15px;
-    top: 15px; */
-    order: 0;
-    display: flex;
-    justify-content: flex-end;
-}
-
-
-/* #two-buttons {
-    /* display: flex; */
-
-
-/* justify-content: space-around; */
-
-#main-nav {
-    /* left: 15px;
-    top: 15px; */
-    display: flex;
-    flex-shrink: 3;
-    justify-content: flex-start;
-    justify-content: space-around;
-    order: -1;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-}
-
 body {
     font-family: 'Open Sans Condensed';
     background: #EEEEEE;
-    display: flex;
-    flex-direction: column;
+    font-size: 1rem;
+    line-height: 1.6;
+    height: 100%;
+    background-color: gray;
+}
+
+#form-main {
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid blueviolet;
+}
+
+#two-buttons {
+    width: 25%;
+    margin: auto auto;
+    border: 2px solid blueviolet;
+    border-radius: 15px;
+    padding: 5%;
+    background-color: whitesmoke;
+    box-shadow: 0px 15px 20px rgba(255, 255, 255, 0.4);
+}
+
+#log-in-form {
+    width: 25%;
+    margin: auto auto;
+    border: 2px solid blueviolet;
+    border-radius: 15px;
+    padding: 5%;
+    background-color: whitesmoke;
+    box-shadow: 0px 15px 20px rgba(255, 255, 255, 0.4);
+}
+
+button {
+    font-size: larger;
+    background-color: blueviolet;
+    color: white;
+    width: 100%;
+    height: 5vh;
+    margin-bottom: 2em;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: white;
+    color: blueviolet;
+    border: 2px solid blueviolet;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
 }
 
 #id-pwd {
@@ -49,9 +65,32 @@ body {
     flex-direction: column;
 }
 
-#verify-pwd {
+label {
+    font-size: larger;
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+input {
+    font-size: larger;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#main-nav {
+    left: 15px;
+    top: 15px;
+    /* display: flex;
+    flex-shrink: 3;
+    justify-content: flex-start;
+    justify-content: space-around; */
+}
+
+main {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 #post-desc {
@@ -66,5 +105,4 @@ body {
 #multi-pages {
     display: flex;
     flex-direction: column;
-    order: 1;
 }
