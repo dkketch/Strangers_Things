@@ -10,6 +10,9 @@ import {
 
 const App = () => {
   const [posts, setPosts] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  // loggedIn = true at end
   
   useEffect(() => {
       const fetchPosts = async () => {
@@ -23,18 +26,24 @@ const App = () => {
 
   return <>
   <BrowserRouter>
-    <main>
-      <div id="main-nav">
-          <Link to="/community">Community Posts</Link>
-          <Link to="/messages">Messages</Link>
-          <Link to="/my-posts">My Posts</Link>
-          <Link to="/profile">Profile</Link>
-        
+    {!loggedIn ?
+      <div id="logInScreen">
         <LogIn />
       </div>
-      <Navigation posts={posts}/>
+    :null}
+    
+    { loggedIn ?
+      <main>
+        <div id="main-nav">
+            <Link to="/community">Community Posts</Link>
+            <Link to="/messages">Messages</Link>
+            <Link to="/my-posts">My Posts</Link>
+            <Link to="/profile">Profile</Link>
+        </div>
+        <Navigation posts={posts}/>
 
-    </main>
+      </main>
+    :null}
   </BrowserRouter>
   </>   
 }
