@@ -5,14 +5,15 @@ import { Link, BrowserRouter } from 'react-router-dom';
 import {
   LogIn,
   Navigation,
-  Community
+  SignOut
 } from './components';
+
 
 const App = () => {
   const [posts, setPosts] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
-
-  // loggedIn = true at end
+  const [showSignOutButton, setShowSignOutButton] = React.useState(false);
+  const [showButtonForm, setShowButtonForm] = React.useState(true);
   
   useEffect(() => {
       const fetchPosts = async () => {
@@ -28,7 +29,14 @@ const App = () => {
   <BrowserRouter>
     {!loggedIn ?
       <div id="logInScreen">
-        <LogIn />
+        <LogIn 
+          loggedIn={loggedIn}
+          setLoggedIn={setLoggedIn}
+          showSignOutButton={showSignOutButton}
+          setShowSignOutButton={setShowSignOutButton}
+          showButtonForm={showButtonForm}
+          setShowButtonForm={setShowButtonForm}
+          />
       </div>
     :null}
     
@@ -39,6 +47,12 @@ const App = () => {
             <Link to="/messages">Messages</Link>
             <Link to="/my-posts">My Posts</Link>
             <Link to="/profile">Profile</Link>
+            <SignOut
+              showSignOutButton={showSignOutButton}
+              setShowSignOutButton={setShowSignOutButton}
+              showButtonForm={showButtonForm}
+              setShowButtonForm={setShowButtonForm}
+            />
         </div>
         <Navigation posts={posts}/>
 
