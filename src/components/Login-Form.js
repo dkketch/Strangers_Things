@@ -1,30 +1,22 @@
 import React, {useState, useEffect} from 'react';
 
 
-const LogIn = () => {
-
+const LogIn = (props) => {
+    const {loggedIn, setLoggedIn} = props;
+    const {showSignOutButton, setShowSignOutButton} = props;
+    const {showButtonForm, setShowButtonForm} = props;
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [passwordVerify, setPasswordVerify] = useState('');
     const [showUsernameForm, setShowUsernameForm] = React.useState(false);
-    const [showSignOutButton, setShowSignOutButton] = React.useState(false);
-    const [showButtonForm, setShowButtonForm] = React.useState(true);
     const [formHeading, setFormHeading] = useState('');
+    
 
     const logInButton = (event) => {
         event.preventDefault()
         setShowUsernameForm(true)
         setShowButtonForm(false)
         setFormHeading('Log In')
-    }
-
-    const signOutButton = (event) => {
-        event.preventDefault()
-        setShowButtonForm(true)
-        setShowSignOutButton(false)
-        localStorage.removeItem('TOKEN')
-        localStorage.removeItem('username')
-        localStorage.removeItem('password')
     }
 
     const signUpButton = (event) => {
@@ -67,6 +59,8 @@ const LogIn = () => {
             const err = 'Passwords do not match';
             console.error(err);
             alert(err);
+            setShowUsernameForm(false);
+            setShowButtonForm(true);
         }        
       }
     } else {
@@ -97,10 +91,12 @@ const LogIn = () => {
             localStorage.setItem('TOKEN', result.data.token );
             setShowUsernameForm(false);
             setShowSignOutButton(true);
+            setLoggedIn(true);
             // show nav options
         } else { 
             alert(result.error.message);
             setShowButtonForm(true);
+            setShowUsernameForm(false);
         }
       })
       .catch(console.error);
@@ -127,10 +123,11 @@ const LogIn = () => {
             localStorage.setItem('TOKEN', result.data.token );
             setShowUsernameForm(false);
             setShowSignOutButton(true);
+            setLoggedIn(true);
             // show nav options
         } else { 
             alert(result.error.message);
-            setShowButtonForm(true);
+            setShowButtonForm(false);
         }
       })
       .catch(console.error);
@@ -177,14 +174,6 @@ const LogIn = () => {
             </form>
         </div> 
       : null }
-
-        { showSignOutButton ?
-                <div id="sign-out-button">
-                <form>
-                <button type='reset' onClick={signOutButton}>Sign Out</button>
-                </form>
-                </div>
-            : null}
   </div>
   </>
 }
