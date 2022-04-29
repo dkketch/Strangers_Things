@@ -7,7 +7,7 @@ const MessageButton = () => {
 
   return (
     <form>
-      <button type="button" onClick={msgButton}>
+      <button id="button2" type="button" onClick={msgButton}>
         Message
       </button>
     </form>

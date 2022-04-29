@@ -143,7 +143,7 @@ const LogIn = (props) => {
     <>
       <div id="form-main">
         {showButtonForm ? (
-          <form id="two-buttons">
+          <form id="id-pwd">
             <div class="form-header">
               <h1>Stranger's Things</h1>
             </div>
