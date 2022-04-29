@@ -5,7 +5,7 @@ import EditPost from "./EditPost";
 const MyPosts = () => {
   const token = localStorage.getItem("TOKEN");
   const myUsername = localStorage.getItem("username");
-  const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState([]);
   const [postID, setPostID] = useState("");
   const [resultData, setResultData] = useState({});
   const [showNewPostButton, setShowNewPostButton] = useState(true);
